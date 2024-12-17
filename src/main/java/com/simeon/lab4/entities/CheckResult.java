@@ -36,6 +36,12 @@ public class CheckResult {
     public CheckResult() {}
 
     public CheckResult(BigDecimal x, BigDecimal y, BigDecimal r, boolean hit, long l, LocalDateTime localDateTime) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.hit = hit;
+        this.workingTime = l;
+        this.createdAt = localDateTime;
     }
 
     public void setId(long id) {

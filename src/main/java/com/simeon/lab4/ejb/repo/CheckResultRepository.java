@@ -18,7 +18,7 @@ public class CheckResultRepository{
 
     public List<CheckResult> findAllByUser(User user) {
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
-            return session.createQuery("from CheckResult where CheckResult.user = :user", CheckResult.class)
+            return session.createQuery("select r from CheckResult r where r.user = :user", CheckResult.class)
                     .setParameter("user", user)
                     .list();
         }
