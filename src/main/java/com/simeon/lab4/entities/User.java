@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 import java.math.BigInteger;
 
 @Entity
+@Table(name="site_users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
-    @SequenceGenerator(name = "user_id_seq", sequenceName = "user_seq", allocationSize = 1)
     private long id;
 
     @Column(nullable = false)

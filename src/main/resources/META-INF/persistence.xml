@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
-             version="3.2">
-    <persistence-unit name="default">
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+<!--    <persistence-unit name="default">-->
 <!--        <description>Default</description>-->
 <!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
-<!--        <jta-data-source>java:jboss/datasources/PostgresDS</jta-data-source>-->
 
 <!--        <class>com.simeon.lab4.entities.CheckResult</class>-->
 <!--        <class>com.simeon.lab4.entities.User</class>-->
 <!--        <exclude-unlisted-classes>true</exclude-unlisted-classes>-->
 
 <!--        <properties>-->
-<!--            <property name="hibernate.hbm2ddl.auto" value="update"/>-->
+<!--            <property name="hibernate.hbm2ddl.auto" value="create"/>-->
 <!--            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>-->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
 <!--            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://postgres:5432/postgres_db"/>-->
 <!--            <property name="jakarta.persistence.jdbc.user" value="dbuser"/>-->
 <!--            <property name="jakarta.persistence.jdbc.password" value="dbuser"/>-->
 <!--        </properties>-->
-    </persistence-unit>
+<!--    </persistence-unit>-->
 </persistence>

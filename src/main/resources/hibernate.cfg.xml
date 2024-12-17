@@ -7,15 +7,15 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">password</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://postgres:5432/postgres_db</property>
+        <property name="hibernate.connection.username">dbuser</property>
+        <property name="hibernate.connection.password">dbuser</property>
         <!-- JDBC connection pool (use the built-in) -->
         <property name="hibernate.connection.pool_size">1</property>
-        <!-- Echo all executed SQL to stdout -->
+<!--         Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-        <!-- SQL dialect -->
+<!--         SQL dialect -->
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.connection.CharSet">utf8</property>

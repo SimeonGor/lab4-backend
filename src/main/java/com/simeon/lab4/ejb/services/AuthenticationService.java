@@ -5,9 +5,11 @@ import com.simeon.lab4.ejb.repo.UserRepository;
 import com.simeon.lab4.ejb.utils.PasswordUtil;
 import com.simeon.lab4.entities.User;
 import jakarta.ejb.EJB;
+import jakarta.ejb.Stateless;
 
 import java.util.Date;
 
+@Stateless
 public class AuthenticationService {
     @EJB
     private TokenService tokenService;

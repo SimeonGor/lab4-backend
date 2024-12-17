@@ -4,15 +4,14 @@ import jakarta.ejb.Singleton;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-@Singleton
 public class HibernateSessionFactory {
-    private SessionFactory sessionFactory;
+    private static SessionFactory sessionFactory;
 
     private HibernateSessionFactory() {}
 
-    public synchronized SessionFactory getSessionFactory() {
+    public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
-            sessionFactory = new Configuration().configure().buildSessionFactory();
+            sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         }
         return sessionFactory;
     }

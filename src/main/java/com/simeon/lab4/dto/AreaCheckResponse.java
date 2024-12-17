@@ -1,12 +1,13 @@
 package com.simeon.lab4.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.simeon.lab4.entities.CheckResult;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 public record AreaCheckResponse(
         BigDecimal x,
@@ -14,6 +15,7 @@ public record AreaCheckResponse(
         BigDecimal r,
         boolean hit,
         long workingTime,
+        @JsonSerialize(using = LocalDateTimeSerializer.class)
         LocalDateTime createdAt
 )
         implements Serializable {

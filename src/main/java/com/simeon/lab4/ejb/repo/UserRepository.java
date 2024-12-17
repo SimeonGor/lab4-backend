@@ -8,12 +8,8 @@ import org.hibernate.Session;
 
 @Stateless
 public class UserRepository {
-    @EJB
-    private HibernateSessionFactory hibernateSessionFactory;
-
-    @Transactional
     public void save(User user) {
-        try (Session session = hibernateSessionFactory.getSessionFactory().openSession()) {
+        try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
             session.beginTransaction();
             session.persist(user);
             session.getTransaction().commit();
@@ -21,7 +17,7 @@ public class UserRepository {
     }
 
     public User getByUsername(String username) {
-        try (Session session = hibernateSessionFactory.getSessionFactory().openSession()) {
+        try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
             return session.createQuery("from User where username = :username", User.class)
                     .setParameter("username", username)
                     .getResultStream().findAny().orElse(null);

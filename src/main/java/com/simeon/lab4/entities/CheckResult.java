@@ -7,10 +7,8 @@ import java.time.LocalDateTime;
 
 @Entity
 public class CheckResult {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "check_result_id_seq")
-    @SequenceGenerator(name = "check_result_id_seq", sequenceName = "check_result_seq", allocationSize = 1)
     private long id;
 
     @Column(nullable = false)
