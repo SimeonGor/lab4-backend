@@ -22,7 +22,7 @@ public class AuthenticationService {
     public AuthenticationResponse login(String username, String password) {
         User user = userRepository.getByUsername(username);
 
-        if (user == null || PasswordUtil.validatePassword(user, password)) {
+        if (user == null || !PasswordUtil.validatePassword(user, password)) {
             return null;
         }
 
