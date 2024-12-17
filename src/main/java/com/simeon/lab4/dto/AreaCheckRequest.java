@@ -16,17 +16,14 @@ public class AreaCheckRequest implements Serializable {
     @Serial
     private static final long serialVersionUID = 1116664443145287831L;
 
-    @FormParam("x")
     @NotNull(message = "x cannot be null")
     @Range(min=-5, max=3, message="x must be between -5 and 3")
     private BigDecimal x;
 
-    @FormParam("y")
     @NotNull(message = "y cannot be null")
     @Range(min=-3, max=5, message="y must be between -3 and 5")
     private BigDecimal y;
 
-    @FormParam("r")
     @NotNull(message = "r cannot be null")
     @Range(min=-5, max=3, message="r must be between -5 and 3")
     private BigDecimal r;

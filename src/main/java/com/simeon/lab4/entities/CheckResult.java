@@ -11,7 +11,7 @@ public class CheckResult {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "check_result_id_seq")
     @SequenceGenerator(name = "check_result_id_seq", sequenceName = "check_result_seq", allocationSize = 1)
-    private Long id;
+    private long id;
 
     @Column(nullable = false)
     private BigDecimal x;
@@ -31,11 +31,11 @@ public class CheckResult {
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.simeon</groupId>
-    <artifactId>lab4</artifactId>˙
+    <artifactId>lab4</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>lab4</name>
     <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>22</maven.compiler.target>
-        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
         <junit.version>5.11.0-M2</junit.version>
     </properties>
 
@@ -45,7 +45,6 @@
             <artifactId>jakarta.security.enterprise-api</artifactId>
             <version>4.0.0-M2</version>
         </dependency>
-
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -72,6 +71,13 @@
             <artifactId>weld-se-core</artifactId>
             <version>6.0.0.Beta1</version>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.weld</groupId>
+            <artifactId>weld-spi</artifactId>
+            <version>6.0.Beta2</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>

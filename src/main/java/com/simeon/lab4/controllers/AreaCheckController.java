@@ -29,8 +29,9 @@ public class AreaCheckController {
     }
 
     @POST
+    @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    public Response check(@BeanParam AreaCheckRequest request) {
+    public Response check(AreaCheckRequest request) {
         Set<ConstraintViolation<AreaCheckRequest>> validates = validator.validate(request);
 
         if (!validates.isEmpty()) {

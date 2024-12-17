@@ -1,25 +1,23 @@
 package com.simeon.lab4.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "basic_auth_user")
 public class User {
     @Id
-    private BigInteger id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
+    @SequenceGenerator(name = "user_id_seq", sequenceName = "user_seq", allocationSize = 1)
+    private long id;
 
-    @Column(name = "password")
+    @Column(nullable = false)
     private String password;
 
-    @Column(name = "username", unique = true)
+    @Column(nullable = false, unique = true)
     private String username;
 
-    public BigInteger getId() {
+    public long getId() {
         return id;
     }
 
@@ -31,7 +29,7 @@ public class User {
         return username;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(long id) {
         this.id = id;
     }
 
