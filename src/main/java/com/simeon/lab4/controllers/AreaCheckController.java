@@ -4,6 +4,7 @@ import com.simeon.lab4.dto.AreaCheckRequest;
 import com.simeon.lab4.dto.AreaCheckResponse;
 import com.simeon.lab4.dto.ErrorMessage;
 import com.simeon.lab4.ejb.services.AreaCheckService;
+import com.simeon.lab4.security.Secured;
 import jakarta.ejb.EJB;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
@@ -17,6 +18,7 @@ import java.util.Set;
 import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Path("/check")
+@Secured
 public class AreaCheckController {
     @EJB
     private AreaCheckService areaCheckService;
