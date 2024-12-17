@@ -19,7 +19,8 @@ public class AreaCheckServiceImpl implements AreaCheckService {
     private HistoryService history;
 
     @Override
-    public AreaCheckResponse handle(AreaCheckRequest request) {
+    public AreaCheckResponse handle(AreaCheckRequest request, String username) {
+        User user = userRepository.getByUsername(username);
         long start = System.currentTimeMillis();
 
         boolean hit = CheckUtil.check(request.getX(), request.getY(), request.getR());
@@ -28,8 +29,7 @@ public class AreaCheckServiceImpl implements AreaCheckService {
         long workingTime = end - start;
 
         AreaCheckResponse result = new AreaCheckResponse(request.getX(), request.getY(), request.getR(), hit, workingTime, LocalDateTime.now());
-
-        history.addResult(result);
+        history.addResult(result, user);
 
         return result;
     }

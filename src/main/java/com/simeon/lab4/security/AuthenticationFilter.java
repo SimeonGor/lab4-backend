@@ -26,7 +26,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
     private TokenService tokenService;
 
     @Override
-    public void filter(ContainerRequestContext containerRequestContext) throws IOException {
+    public void filter(ContainerRequestContext containerRequestContext) {
         String authorizationHeader = containerRequestContext.getHeaderString(HEADER_NAME);
 
         if (authorizationHeader == null || !authorizationHeader.startsWith(BEARER_PREFIX)) {

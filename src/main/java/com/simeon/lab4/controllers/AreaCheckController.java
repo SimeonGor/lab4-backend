@@ -54,8 +54,8 @@ public class AreaCheckController {
                     .entity(new ErrorMessage(String.join(", ", validates.stream().map(ConstraintViolation::getMessage).toList())))
                     .build();
         }
-
-        AreaCheckResponse areaCheckResponse = areaCheckService.handle(request);
+        String username = securityContext.getUserPrincipal().getName();
+        AreaCheckResponse areaCheckResponse = areaCheckService.handle(request, username);
 
         return Response.ok(areaCheckResponse).build();
     }

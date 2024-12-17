@@ -8,5 +8,5 @@ import java.util.List;
 public interface HistoryService {
     List<AreaCheckResponse> getResultList(User user);
 
-    void addResult(AreaCheckResponse result);
+    void addResult(AreaCheckResponse result, User user);
 }
