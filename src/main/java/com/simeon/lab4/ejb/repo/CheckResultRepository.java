@@ -1,6 +1,7 @@
 package com.simeon.lab4.ejb.repo;
 
 import com.simeon.lab4.entities.CheckResult;
+import com.simeon.lab4.entities.User;
 import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
 import jakarta.transaction.Transactional;
@@ -17,9 +18,11 @@ public class CheckResultRepository{
         }
     }
 
-    public List<CheckResult> findAll() {
+    public List<CheckResult> findAllByUser(User user) {
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
-            return session.createQuery("from CheckResult", CheckResult.class).list();
+            return session.createQuery("from CheckResult where CheckResult.user = :user", CheckResult.class)
+                    .setParameter("user", user)
+                    .list();
         }
     }
 
