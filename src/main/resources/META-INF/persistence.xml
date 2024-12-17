@@ -6,10 +6,10 @@
     <persistence-unit name="default">
 <!--        <description>Default</description>-->
 <!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+<!--        <jta-data-source>java:jboss/datasources/PostgresDS</jta-data-source>-->
 
 <!--        <class>com.simeon.lab4.entities.CheckResult</class>-->
 <!--        <class>com.simeon.lab4.entities.User</class>-->
-<!--        <class>com.simeon.lab4.entities.Group</class>-->
 <!--        <exclude-unlisted-classes>true</exclude-unlisted-classes>-->
 
 <!--        <properties>-->

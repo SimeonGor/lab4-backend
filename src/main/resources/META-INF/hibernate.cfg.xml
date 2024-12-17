@@ -24,7 +24,6 @@
 
         <mapping class="com.simeon.lab4.entities.CheckResult" />
         <mapping class="com.simeon.lab4.entities.User" />
-        <mapping class="com.simeon.lab4.entities.Group" />
 
     </session-factory>
 </hibernate-configuration>

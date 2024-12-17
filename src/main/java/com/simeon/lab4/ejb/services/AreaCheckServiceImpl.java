@@ -23,7 +23,7 @@ public class AreaCheckServiceImpl implements AreaCheckService {
 
         AreaCheckResponse result = new AreaCheckResponse(request.getX(), request.getY(), request.getR(), hit, workingTime, LocalDateTime.now());
 
-//        history.addResult(result);
+        history.addResult(result);
 
         return result;
     }

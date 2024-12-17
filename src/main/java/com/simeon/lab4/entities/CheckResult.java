@@ -31,6 +31,10 @@ public class CheckResult {
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
+    @JoinColumn(nullable = false)
+    @ManyToOne
+    private User user;
+
     public void setId(long id) {
         this.id = id;
     }
@@ -85,5 +89,13 @@ public class CheckResult {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
