@@ -11,11 +11,13 @@ import java.security.spec.KeySpec;
 import java.util.Base64;
 
 public class PasswordUtil {
-    private static final int iterations = 65536;
-    private static final int keyLength = 256;
-    private static final String algorithm = "PBKDF2WithHmacSHA1";
+    private static final int ITERATIONS = 65536;
+    private static final int KEY_LENGTH = 256;
+    private static final String ALGORITHM = "PBKDF2WithHmacSHA1";
     private static final Base64.Encoder encoder = Base64.getEncoder();
     private static final Base64.Decoder decoder = Base64.getDecoder();
+
+    private PasswordUtil() {}
 
     public static void setPassword(User user, String password) {
         byte[] salt = generateSalt();
@@ -27,13 +29,13 @@ public class PasswordUtil {
 
     public static boolean validatePassword(User user, String password) {
         String passwordHash = calculateHash(password, decoder.decode(user.getSalt()));
-        return passwordHash.equals(user.getPassword());
+        return passwordHash != null && passwordHash.equals(user.getPassword());
     }
 
     private static String calculateHash(String password, byte[] salt) {
         try {
-            KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, iterations, keyLength);
-            SecretKeyFactory factory = SecretKeyFactory.getInstance(algorithm);
+            KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, ITERATIONS, KEY_LENGTH);
+            SecretKeyFactory factory = SecretKeyFactory.getInstance(ALGORITHM);
             byte[] hash = factory.generateSecret(spec).getEncoded();
             return encoder.encodeToString(hash);
         }

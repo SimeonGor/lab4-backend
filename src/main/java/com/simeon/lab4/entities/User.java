@@ -2,8 +2,6 @@ package com.simeon.lab4.entities;
 
 import jakarta.persistence.*;
 
-import java.math.BigInteger;
-
 @Entity
 @Table(name="site_users")
 public class User {

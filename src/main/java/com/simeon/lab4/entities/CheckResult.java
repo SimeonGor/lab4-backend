@@ -33,6 +33,11 @@ public class CheckResult {
     @ManyToOne
     private User user;
 
+    public CheckResult() {}
+
+    public CheckResult(BigDecimal x, BigDecimal y, BigDecimal r, boolean hit, long l, LocalDateTime localDateTime) {
+    }
+
     public void setId(long id) {
         this.id = id;
     }

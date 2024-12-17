@@ -29,7 +29,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
     public void filter(ContainerRequestContext containerRequestContext) throws IOException {
         String authorizationHeader = containerRequestContext.getHeaderString(HEADER_NAME);
 
-        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+        if (authorizationHeader == null || !authorizationHeader.startsWith(BEARER_PREFIX)) {
             containerRequestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).entity("Token invalid").build());
             return;
         }

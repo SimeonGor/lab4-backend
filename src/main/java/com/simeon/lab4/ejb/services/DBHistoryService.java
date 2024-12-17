@@ -23,6 +23,6 @@ public class DBHistoryService implements HistoryService {
 
     @Override
     public void addResult(AreaCheckResponse result) {
-
+        checkResultRepository.save(AreaCheckResponse.toCheckResult(result));
     }
 }

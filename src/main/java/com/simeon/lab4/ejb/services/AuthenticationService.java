@@ -17,7 +17,7 @@ public class AuthenticationService {
     @EJB
     private UserRepository userRepository;
 
-    private static final long tokenDuration = 24 * 60 * 60 * 1000;
+    private static final long TOKEN_DURATION = (long) 24 * 60 * 60 * 1000;
 
     public AuthenticationResponse login(String username, String password) {
         User user = userRepository.getByUsername(username);
@@ -26,7 +26,7 @@ public class AuthenticationService {
             return null;
         }
 
-        Date expirationDate = new Date(System.currentTimeMillis() + tokenDuration);
+        Date expirationDate = new Date(System.currentTimeMillis() + TOKEN_DURATION);
         String token = tokenService.generateToken(username, expirationDate);
 
         return new AuthenticationResponse(token, expirationDate.toInstant().toEpochMilli());
@@ -42,7 +42,7 @@ public class AuthenticationService {
         PasswordUtil.setPassword(user, password);
         userRepository.save(user);
 
-        Date expirationDate = new Date(System.currentTimeMillis() + tokenDuration);
+        Date expirationDate = new Date(System.currentTimeMillis() + TOKEN_DURATION);
         String token = tokenService.generateToken(username, expirationDate);
 
         return new AuthenticationResponse(token, expirationDate.toInstant().toEpochMilli());

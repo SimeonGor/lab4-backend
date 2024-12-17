@@ -2,9 +2,7 @@ package com.simeon.lab4.ejb.repo;
 
 import com.simeon.lab4.entities.CheckResult;
 import com.simeon.lab4.entities.User;
-import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
-import jakarta.transaction.Transactional;
 import org.hibernate.Session;
 
 import java.util.List;

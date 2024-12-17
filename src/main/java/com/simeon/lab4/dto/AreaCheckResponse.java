@@ -30,4 +30,13 @@ public record AreaCheckResponse(
                 checkResult.getWorkingTime(),
                 checkResult.getCreatedAt());
     }
+
+    public static CheckResult toCheckResult(AreaCheckResponse areaCheckResponse) {
+        return new CheckResult(areaCheckResponse.x(),
+                areaCheckResponse.y(),
+                areaCheckResponse.r(),
+                areaCheckResponse.hit(),
+                areaCheckResponse.workingTime(),
+                areaCheckResponse.createdAt());
+    }
 }

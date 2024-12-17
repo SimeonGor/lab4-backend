@@ -1,11 +1,6 @@
 package com.simeon.lab4.dto;
 
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.ws.rs.FormParam;
-import jakarta.ws.rs.QueryParam;
 import org.hibernate.validator.constraints.Range;
 
 import java.io.Serial;
@@ -27,8 +22,6 @@ public class AreaCheckRequest implements Serializable {
     @NotNull(message = "r cannot be null")
     @Range(min=-5, max=3, message="r must be between -5 and 3")
     private BigDecimal r;
-
-    public AreaCheckRequest() {}
 
     public BigDecimal getX() {
         return x;
