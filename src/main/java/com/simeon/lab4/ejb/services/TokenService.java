@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Stateless
 public class TokenService {
-    private static final SecretKey secretKey = Keys.hmacShaKeyFor("top secret".getBytes());
+    private static final SecretKey secretKey = Keys.hmacShaKeyFor("rtVogb87HN5ydZ6OVgTXaDVbtEy6HikQj2JiVGL2pmc3S".getBytes());
 
     public String generateToken(String username, Date expiration) {
         return Jwts.builder()
